@@ -1,78 +1,25 @@
-[
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " овлвшв",
-        "done": false
-    },
-    {
-        "text": " ",
-        "done": true
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " чллвь",
-        "done": true
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " овлвшв",
-        "done": false
-    },
-    {
-        "text": " ",
-        "done": true
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " отчлсл",
-        "done": false
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " ",
-        "done": true
-    },
-    {
-        "text": " ",
-        "done": false
-    },
-    {
-        "text": " чотчоч",
-        "done": false
-    },
-    {
-        "text": " лчтчоч",
-        "done": true
-    },
-    {
-        "text": " лвлч",
-        "done": false
-    }
-]
+{
+    "title": "белеле",
+    "tasks": [
+        {
+            "text": "",
+            "done": true
+        },
+        {
+            "text": "",
+            "done": false
+        },
+        {
+            "text": "таовлв",
+            "done": true
+        },
+        {
+            "text": "",
+            "done": false
+        },
+        {
+            "text": "",
+            "done": true
+        }
+    ]
+}
