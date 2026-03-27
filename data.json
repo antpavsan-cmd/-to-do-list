@@ -1,17 +1,21 @@
 {
-    "title": "белеле",
+    "label_color": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "theme": [
+        0.2,
+        0.2,
+        0.2,
+        1
+    ],
+    "title": "ыыыыыыы",
     "tasks": [
         {
             "text": "",
-            "done": true
-        },
-        {
-            "text": "",
             "done": false
-        },
-        {
-            "text": "таовлв",
-            "done": true
         },
         {
             "text": "",
@@ -20,6 +24,30 @@
         {
             "text": "",
             "done": true
+        },
+        {
+            "text": "nendjrj",
+            "done": false
+        },
+        {
+            "text": "",
+            "done": true
+        },
+        {
+            "text": "",
+            "done": true
+        },
+        {
+            "text": "",
+            "done": false
+        },
+        {
+            "text": "hfjdjdjfjdjjdjr",
+            "done": false
+        },
+        {
+            "text": "",
+            "done": false
         }
     ]
 }

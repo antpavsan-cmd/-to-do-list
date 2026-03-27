@@ -10,7 +10,7 @@ import json
 import os
 class App(App):
 	def build(self):
-		Window.clearcolor = (0.5,0.5,0.5,1)
+		Window.clearcolor = (0.2,0.2,0.2,1)
 		self.scroll = ScrollView(size_hint=(1,1))
 		self.layout_label= BoxLayout(orientation="horizontal",spacing=10,padding=1,size_hint=(1,None),height=50)
 		self.layout_rows = BoxLayout(orientation="vertical",spacing=1,padding=1,size_hint=(1,None))
@@ -24,18 +24,18 @@ class App(App):
 		self.clear.bind(on_press=self.remove_all)
 		self.save_but = Button(text="сохранить",size_hint=(1,None),height=200)
 		self.save_but.bind(on_press=self.save)
-		self.label_top = Label(text="заметки",size_hint=(None,None),width=450,height=50)
-		self.text_label=(TextInput(text="новое название",multiline=False,size_hint=(None,None),width=450,height=70))
+		self.label_top = Label(text="заметки",size_hint=(None,None),width=1060,height=50)
+		self.text_label=TextInput(text="заметки",multiline=False,size_hint=(None,None),width=1060,height=70)
 		self.text_label.opacity = 0
 		self.text_label.disabled= True
-		self.checkbox_label=CheckBox(size_hint=(None,None),width=50,height=50)
+		self.checkbox_label=CheckBox(size_hint=(None,None),width=40,height=450)
 		self.checkbox_label.bind(active=self.change_label)
-		self.layout_label.add_widget(self.text_label)
+		self.layout_main.add_widget(self.text_label)
 		self.layout_label.add_widget(self.label_top)
-		self.layout_label.add_widget(self.checkbox_label)
 		self.layout_top.add_widget(self.button)
 		self.layout_top.add_widget(self.clear)
 		self.layout_top.add_widget(self.save_but)
+		self.layout_top.add_widget(self.checkbox_label)
 		self.layout_main.add_widget(self.layout_label)
 		self.layout_main.add_widget(self.layout_top)
 		self.layout_main.add_widget(self.scroll)
@@ -47,7 +47,9 @@ class App(App):
 			return
 		with open("data.json","r",encoding = "utf-8") as f:
 			data = json.load(f)
-		for task in data:
+			self.label_top.text=data["title"]
+			self.text_label.text=data["title"]
+		for task in data["tasks"]:
 			self.create_row(text=task["text"],done=task["done"])
 			#сейв
 	def save(self,instance=None):
@@ -65,8 +67,12 @@ class App(App):
 						"text": text,
 						"done": done,
 						})
+		save_data= {
+		"title": self.text_label.text,
+		"tasks": data
+		}
 		with open("data.json","w",encoding = "utf-8") as f:
-			json.dump(data,f,indent = 4,ensure_ascii=False)
+			json.dump(save_data,f,indent = 4,ensure_ascii=False)
 		#создание рядов
 	def create_row(self,instance=None,text="",done=False):
 		new_layout = BoxLayout(orientation="horizontal",spacing=5,padding=5,size_hint=(1,None),height=200)
@@ -96,6 +102,8 @@ class App(App):
 	# кнопка очистки
 	def remove_all(self,instance=None):
 		self.layout_rows.clear_widgets()
+		self.label_top.text="заметки"
+		self.text_label.text="заметки"
 		#заголовки
 	def change_label(self,instance,value):
 		if value:
